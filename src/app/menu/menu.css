@@ -1,0 +1,260 @@
+/* Genel Konteyner ve Arka Plan */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 10px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Kart / Çerçeve Yapısı (Ekleme Alanı) */
+.main-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Başlıklar */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+h3 {
+  color: #4b5563;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Fiyat Kutusu Düzenlemesi */
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: center;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+}
+
+.price-box label {
+  font-weight: bold;
+  color: #374151;
+}
+
+.price-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.price-box input {
+  width: 110px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  font-size: 15px;
+}
+
+.price-box input:focus {
+  border-color: #2196f3;
+}
+
+.currency {
+  background: #e2e8f0;
+  border: 1px solid #d1d5db;
+  border-left: none;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* İçerik Alanı */
+.items {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Tek Satır Yemek Item Düzeni */
+.item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.item select,
+.item input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+}
+
+.item select:focus,
+.item input:focus {
+  border-color: #2196f3;
+}
+
+.item input {
+  flex: 1;
+}
+
+/* Temel Buton Ayarları */
+button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+/* Öğe Silme Butonu (Çöp Kutusu) */
+.delete-item-btn {
+  background: #fee2e2;
+  color: #ef4444;
+  padding: 10px;
+}
+
+.delete-item-btn:hover {
+  background: #fca5a5;
+}
+
+/* Item Ekle Butonu */
+.add-btn {
+  background: #10b981;
+  color: white;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background: #059669;
+}
+
+/* Kaydet / Güncelle Alanı */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: #2196f3;
+  color: white;
+  padding: 12px 24px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background: #1976d2;
+}
+
+/* Bölüm Ayracı */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 40px 0;
+}
+
+/* TÜM MENÜLER LİSTELEME ÇERÇEVELERİ */
+.list-section h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.menu-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.menu-card-price {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.price-text {
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Hizalanmış İçerik Satırları */
+.menu-card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.menu-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Kategori Rozeti (Badge) */
+.category-badge {
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 90px;
+  text-align: center;
+}
+
+.item-name-text {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+/* Liste Buton Kutusu */
+.menu-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 15px;
+}
+
+/* Kart Sil Butonu */
+.btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #d32f2f;
+}
+
+/* Kart Düzenle Butonu */
+.btn-edit {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #e68a00;
+}

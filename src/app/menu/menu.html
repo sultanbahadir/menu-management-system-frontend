@@ -1,0 +1,71 @@
+<div class="container">
+ 
+  <div class="main-card">
+    <h2>🍽 Günlük Menü Yönetimi</h2>
+   
+    <div class="price-box">
+      <label>Menü Genel Fiyatı:</label>
+      <div class="price-input-wrapper">
+        <input type="number" [(ngModel)]="selectedMenu.price" name="menuPrice" />
+        <span class="currency">TL</span>
+      </div>
+    </div>
+   
+    <div class="items">
+      <h3>Menü İçeriği (Yemekler)</h3>
+   
+      <div class="item" *ngFor="let item of selectedMenu.items; let i = index">
+        <select [(ngModel)]="item.category" [name]="'category_' + i">
+          <option [ngValue]="Category.SOUP">Çorba</option>
+          <option [ngValue]="Category.MAIN_COURSE">Ana Yemek</option>
+          <option [ngValue]="Category.DESSERT">Tatlı</option>
+          <option [ngValue]="Category.DRINK">İçecek</option>
+        </select>
+   
+        <input type="text" [(ngModel)]="item.name" [name]="'itemName_' + i" placeholder="Yemek adını yazınız..." />
+   
+        <button type="button" class="delete-item-btn" (click)="removeItem(i)" title="Öğeyi Sil">🗑</button>
+      </div>
+   
+      <button type="button" class="add-btn" (click)="addItem()">
+        ➕ Yeni Yemek Ekle
+      </button>
+    </div>
+   
+    <div class="actions">
+      <button type="button" class="save-btn" (click)="saveMenu()">
+        💾 Menüyü Sunucuya Kaydet
+      </button>
+    </div>
+  </div>
+ 
+  <hr class="section-divider" />
+ 
+  <div class="list-section">
+    <h3>📋 Sistemde Kayıtlı Tüm Menüler</h3>
+   
+    <div *ngIf="menus.length === 0" style="text-align: center; color: #9ca3af; padding: 20px; background: #f9fafb; border-radius: 8px; border: 1px dashed #e5e7eb;">
+      Şu an listelenecek menü bulunamadı. Lütfen backend sunucunuzun açık olduğundan emin olun veya yeni bir menü ekleyin.
+    </div>
+
+    <div class="menu-card" *ngFor="let menu of menus">
+      <div class="menu-card-price">
+        <b>Menü ID:</b> <span style="color: #6b7280; margin-right: 15px;">#{{ menu.id }}</span>
+        <b>Fiyat:</b> <span class="price-text">{{ menu.price }} TL</span>
+      </div>
+   
+      <div class="menu-card-items">
+        <div class="menu-item-row" *ngFor="let item of menu.items">
+          <span class="category-badge">{{ getCategoryName(item.category) }}</span>
+          <span class="item-name-text">{{ item.name }}</span>
+        </div>
+      </div>
+   
+      <div class="menu-card-actions">
+        <button type="button" class="btn-delete" *ngIf="menu.id" (click)="deleteMenu(menu.id)">❌ Menüyü Sil</button>
+        <button type="button" class="btn-edit" (click)="selectedMenu = menu">✏️ Düzenle</button>
+      </div>
+    </div>
+  </div>
+ 
+</div>
